@@ -24,9 +24,13 @@ const Navigation = styled.nav`
 const NavLogo = styled(Link)`
 	margin-right: 2rem;
 	font-weight: 500;
-	font-size: 30px;
+	font-size: 3rem;
 	text-decoration: none;
 	color: #fff;
+
+	@media (max-width: 300px) {
+		font-size: 2.5rem;
+	}
 `;
 
 const SearchContainer = styled.div`
@@ -34,6 +38,10 @@ const SearchContainer = styled.div`
 	width: 300px;
 	height: 35px;
 	min-width: 50px;
+
+	@media (max-width: 300px) {
+		width: 200px;
+	}
 `;
 
 const Search = styled.input`
