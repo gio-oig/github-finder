@@ -13,7 +13,7 @@ import {
 	Title,
 	Switch,
 	UsersListContainer,
-} from './PopularUsers.style';
+} from './PopularUsersPage.style';
 
 const PopularUsers = () => {
 	const [users, setUsers] = useState([]);
@@ -43,11 +43,15 @@ const PopularUsers = () => {
 		<Container>
 			<Header>
 				<Title>Most popular users according github</Title>
-				{displayType === 'list' ? (
+				{/* {displayType === 'list' ? (
 					<Switch src={listImg} onClick={chageDisplayType} />
 				) : (
 					<Switch src={groupImg} onClick={chageDisplayType} />
-				)}
+				)} */}
+				<Switch
+					src={displayType === 'list' ? listImg : groupImg}
+					onClick={chageDisplayType}
+				/>
 			</Header>
 			<UsersListContainer view={displayType}>
 				{loading ? (

@@ -7,14 +7,19 @@ const Container = styled.section`
 	border: 1rem;
 	border-radius: 1rem;
 	background-color: #fff;
+
+	@media (max-width: 500px) {
+		width: 100%;
+	}
 `;
 const Header = styled.div`
 	display: flex;
 	justify-content: space-between;
 `;
 const Title = styled.h2`
-	font-weight: 500;
-	font-size: 2rem;
+	font-weight: 600;
+	font-size: 2.3rem;
+	color: var(--primary-dark);
 `;
 const Switch = styled.img`
 	cursor: pointer;

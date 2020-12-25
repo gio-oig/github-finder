@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 const NavBarContainer = styled.header`
 	min-height: 10vh;
-	background-color: #bae8e8;
+	background-color: var(--primary-blue);
 	display: flex;
 	align-items: center;
+	padding: 10px 0;
 `;
 
 const Navigation = styled.nav`
@@ -12,41 +15,87 @@ const Navigation = styled.nav`
 	margin: auto;
 	display: flex;
 	align-items: center;
+
+	@media (max-width: 450px) {
+		flex-direction: column;
+	}
 `;
 
-const NavLogo = styled.h1`
+const NavLogo = styled(Link)`
 	margin-right: 2rem;
 	font-weight: 500;
 	font-size: 30px;
-	color: #272343;
+	text-decoration: none;
+	color: #fff;
 `;
 
 const SearchContainer = styled.div`
 	position: relative;
-	overflow: hidden;
+	width: 300px;
+	height: 35px;
+	min-width: 50px;
 `;
+
 const Search = styled.input`
 	width: 100%;
+	height: 100%;
 	padding: 0.5rem;
 	border-radius: 1rem;
 	font-size: 1.8rem;
 
+	color: rgba(39, 35, 67, 0.62);
 	outline: none;
 	border: none;
 `;
+
 const SearchButton = styled.button`
 	position: absolute;
 	padding: 0.4rem 0.7rem;
-	left: ${({ focus }) => (focus ? `78%` : `100%`)};
+	width: 80px;
+	height: 30px;
+	right: 1%;
 	top: 50%;
+	opacity: ${({ focus }) => (focus ? 1 : 0)};
+	visibility: ${({ focus }) => (focus ? 'visible' : 'hidden')};
 	transform: translateY(-50%);
 	color: #fff;
-	background-color: #272343;
+	background-color: #00a8cc;
 	border-radius: 1rem;
 	border: none;
 	font-size: 1.8rem;
-	transition: 0.5s ease-in-out;
+	font-weight: 600;
+	transition: 0.2s ease-in-out;
 	outline: none;
+	cursor: pointer;
+`;
+
+const SearchHistoryContainer = styled.div`
+	min-width: 20rem;
+	position: absolute;
+	top: 110%;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	visibility: hidden;
+	border-radius: 5px;
+	background-color: #fff;
+	transition: 0.4s ease-in-out;
+
+	${({ focus }) => {
+		if (focus)
+			return {
+				opacity: 1,
+				visibility: 'visible',
+			};
+	}}
+`;
+
+const HistoryItem = styled(Link)`
+	padding: 0.5rem;
+	width: auto;
+	font-size: 15px;
+	text-decoration: none;
 	cursor: pointer;
 `;
 
@@ -57,4 +106,6 @@ export {
 	SearchContainer,
 	Search,
 	SearchButton,
+	SearchHistoryContainer,
+	HistoryItem,
 };

@@ -4,7 +4,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './components/navbar/NavBar';
 
 import GlobalStyle from './globalStyles';
-import PopularUsers from './pages/popularUsers/PopularUsers';
+import PopularUsers from './pages/popularUsers/PopularUsersPage';
 import UserPage from './pages/userPage/UserPage';
 
 function App() {

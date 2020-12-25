@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const UserContainer = styled.div`
 	display: flex;
-	flex-direction: row; // column
+	flex-direction: row;
 	padding: 1rem;
 	margin: 0.3rem;
 	align-items: center;
@@ -20,7 +20,9 @@ const UserContainer = styled.div`
 		top: 0;
 		width: 0;
 		height: 100%;
-		background-color: #bae8e8;
+		transition: 0.3s ease-in-out;
+		background-color: var(--lignt-blue);
+		opacity: 0.8;
 	}
 
 	&:hover::before {
@@ -42,8 +44,8 @@ const UserContainer = styled.div`
 `;
 
 const UserAvatar = styled.img`
-	width: 80px; // 100%
-	height: 80px; // 200px
+	width: 80px;
+	height: 80px;
 	border-radius: 50%;
 
 	${(prop) => {
@@ -60,7 +62,7 @@ const UserAvatar = styled.img`
 
 const InfoContainer = styled.div`
 	display: flex;
-	min-height: 50%; //
+	min-height: 50%;
 	margin-left: 1rem;
 	flex-direction: column;
 	justify-content: space-between;
@@ -81,7 +83,12 @@ const Username = styled(Link)`
 	font-size: 17px;
 	font-weight: 600;
 	text-decoration: none;
+	color: var(--primary-dark);
 	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+	}
 `;
 const UserType = styled.p`
 	font-size: 13px;
