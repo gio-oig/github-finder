@@ -89,6 +89,7 @@ const InfoItem = styled.li`
 
 const OrganizationsContainer = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 	/* margin: 2rem 0; */
 `;
 
